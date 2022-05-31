@@ -1,14 +1,16 @@
 """Jyl 代码编写"""
 
 import pygame
+from pygame.sprite import Sprite
 
 """类是对客观世界和思维世界存在的规律在计算机中的反应，封装称了一套大体的 模板， 可以创建多个
 以此 类 为基础的 实例化对象， 类有属性和方法，在类内编写的正式实现对象操作的一系列方法，不建议在 类的模块
 内进行 打印或输出，而是可以通过其它模块来调用此类的模块，进行输出"""
 
 
-class Ship():
+class Ship(Sprite):
     def __init__(self, ai_settings, screen):  # __init__中有几个形参，在实例化对象中就要传几个实参，这个Ship类的实例化对象中，要额外传个screen
+        super(Ship,self).__init__()
         """初始化飞船，并设置其位置"""
         self.screen = screen
         self.ai_settings = ai_settings
